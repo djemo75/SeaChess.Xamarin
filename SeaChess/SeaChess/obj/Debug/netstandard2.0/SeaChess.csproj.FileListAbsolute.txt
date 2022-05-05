@@ -1,0 +1,14 @@
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\bin\Debug\netstandard2.0\SeaChess.deps.json
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\bin\Debug\netstandard2.0\SeaChess.dll
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\bin\Debug\netstandard2.0\ref\SeaChess.dll
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\bin\Debug\netstandard2.0\SeaChess.pdb
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\SeaChess.csprojAssemblyReference.cache
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\SeaChess.AssemblyInfoInputs.cache
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\SeaChess.AssemblyInfo.cs
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\SeaChess.dll
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\ref\SeaChess.dll
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\SeaChess.pdb
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess\obj\Debug\netstandard2.0\GamePage.xaml.g.cs

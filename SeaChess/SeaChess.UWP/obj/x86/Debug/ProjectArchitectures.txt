@@ -1,0 +1,1 @@
+C:\Users\djems\source\repos\SeaChess\SeaChess\SeaChess.UWP\SeaChess.UWP.csproj;x86

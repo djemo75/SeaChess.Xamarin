@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SeaChess.MainPage">
+
+    <StackLayout Margin="20,35,20,20" VerticalOptions="CenterAndExpand">
+        <!-- Place new controls here -->
+        <Label Text="Welcome to SeaChess!" 
+            HorizontalOptions="Center"
+            FontSize="Large"
+            TextColor="DarkBlue"
+            Margin="0,0,0,40"/>
+        <Label Text="First player name:"  
+            HorizontalOptions="Center" />
+        <Entry Placeholder="Enter name"
+            x:Name="firstPlayerName"/>
+        <Label Text="Second player name:"  
+            HorizontalOptions="Center" />
+        <Entry Placeholder="Enter name"
+            x:Name="secondPlayerName"/>
+        <Button Text="Start game"
+            Clicked="OnButtonClicked"
+            Margin="0,20,0,0"/>
+    </StackLayout>
+
+</ContentPage>
