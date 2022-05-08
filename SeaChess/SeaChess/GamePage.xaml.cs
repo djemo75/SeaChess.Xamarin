@@ -104,7 +104,7 @@ namespace SeaChess
             boardUi.Content = grid;
         }
 
-        private void onClickTile(object sender, EventArgs e)
+        private async void onClickTile(object sender, EventArgs e)
         {
             var tile = (sender as Tile);
             if (!String.IsNullOrEmpty(tile.Text)){
@@ -120,26 +120,84 @@ namespace SeaChess
                 tile.Text = SECOND_SYMBOL;
                 values[tile.row, tile.column] = SECOND_SYMBOL;
             }
-            if (!checkWinner())
+
+            var winner = checkWinner(FIRST_SYMBOL) ? firstPlayer : checkWinner(SECOND_SYMBOL) ? secondPlayer : null;
+            if (winner != null)
+            {
+                await DisplayAlert("Game end", winner + " is winner", "New game");
+                renderBoard();
+                for (int rowCounter = 0; rowCounter < ROWS_COUNT; rowCounter++)
+                {
+                    for (int columnCounter = 0; columnCounter < COLUMNS_COUNT; columnCounter++)
+                    {
+                        values[rowCounter, columnCounter] = "";
+                    }
+                }
+            } else
             {
                 switchPlayers();
             }
+            
         }
 
-        private bool checkWinner()
+        private bool checkWinner(string player)
         {
+            var hasWinner = false;
+            var minimumCount = 3;
+
+            // check columns
             for (int rowCounter = 0; rowCounter < ROWS_COUNT; rowCounter++)
             {
-                for (int columnCounter = 0; columnCounter < COLUMNS_COUNT; columnCounter++)
+                
+                for (int columnCounter = 0; columnCounter <= COLUMNS_COUNT - minimumCount; columnCounter++)
                 {
-                    if (values[rowCounter, columnCounter]==FIRST_SYMBOL)
+                    if (values[rowCounter, columnCounter] == player &&
+                        values[rowCounter, columnCounter+1] == player &&
+                        values[rowCounter, columnCounter+2] == player)
                     {
-
+                        hasWinner=true;
                     }
                 }
             }
 
-                throw new NotImplementedException();
+            // check rows
+            for (int rowCounter = 0; rowCounter <= ROWS_COUNT - minimumCount; rowCounter++)
+            {
+                for (int columnCounter = 0; columnCounter < COLUMNS_COUNT; columnCounter++)
+                {
+                    if (values[rowCounter, columnCounter] == player &&
+                        values[rowCounter+1, columnCounter] == player &&
+                        values[rowCounter+2, columnCounter] == player)
+                    {
+                        hasWinner = true;
+                    }
+                }
+            }
+
+            // check diagonals
+            for (int rowCounter = 0; rowCounter <= ROWS_COUNT - minimumCount; rowCounter++)
+            {
+                for (int columnCounter = 0; columnCounter <= COLUMNS_COUNT - minimumCount; columnCounter++)
+                {
+                    // first diagonal
+                    if (values[rowCounter, columnCounter] == player &&
+                        values[rowCounter+1, columnCounter+1] == player &&
+                        values[rowCounter+2, columnCounter+2] == player)
+                    {
+                        hasWinner = true;
+                    }
+
+                    // second diagonal
+                    if (values[rowCounter, columnCounter+2] == player &&
+                        values[rowCounter+1, columnCounter+1] == player &&
+                        values[rowCounter+2, columnCounter] == player)
+                    {
+                        hasWinner = true;
+                    }
+                }
+            }
+
+            return hasWinner;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace SeaChess
 
             if (String.IsNullOrEmpty(firstPlayer) || String.IsNullOrEmpty(secondPlayer))
             {
-                DisplayAlert("Alert", "Please fill the names of the players!", "OK");
+                await DisplayAlert("Alert", "Please fill the names of the players!", "OK");
                 return;
             }
 
